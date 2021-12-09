@@ -26,10 +26,8 @@ function ucFirst(str) {
 // checkSpam("innocent rabbit") == false
 function checkSpam(str) {
     let newStr = str.toLowerCase();
-    if ( newStr.includes('viagra') || newStr.includes('xxx') )  {
-        return true
-    }
+    return newStr.includes('viagra') || newStr.includes('xxx') 
 }
-console.log(checkSpam('buy ViAgRA now'));
-console.log(checkSpam('free xxxxx'));
-console.log(checkSpam("innocent rabbit"));
+// console.log(checkSpam('buy ViAgRA now'));
+// console.log(checkSpam('free xxxxx'));
+// console.log(checkSpam("innocent rabbit"));
