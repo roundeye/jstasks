@@ -50,5 +50,15 @@ function truncate(str, maxlength) {
 function truncate2(str, maxlength) {
     return (str.length > maxlength) ? str.slice(0, maxlength - 1) + '…' : str;
 }
-console.log(truncate2("Вот, что мне хотелось бы сказать на эту тему:", 20));
-console.log(truncate2("Всем привет!", 20));
+// console.log(truncate2("Вот, что мне хотелось бы сказать на эту тему:", 20));
+// console.log(truncate2("Всем привет!", 20));
+
+// 5. Выделить число
+// Есть стоимость в виде строки "$120". То есть сначала идёт знак валюты, а затем – число.
+// Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять числовое значение и возвращать его.
+// Например:
+// alert( extractCurrencyValue('$120') === 120 ); // true
+function extractCurrencyValue(str) {
+    return +str.slice(1)
+}
+console.log(extractCurrencyValue('$120'));
