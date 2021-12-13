@@ -61,4 +61,20 @@ function truncate2(str, maxlength) {
 function extractCurrencyValue(str) {
     return +str.slice(1)
 }
-console.log(extractCurrencyValue('$120'));
+// console.log(extractCurrencyValue('$120'));
+
+// 6. Постфиксная и префиксная формы
+// Чему будут равны переменные a, b, c и d в примере ниже?
+// let a = 1, b = 1;
+// let c = ++a; // ? 
+// let d = b++; // ?
+
+function preIncrement(number) {
+    return ++number; 
+}
+
+function postIncrement(number) {
+    return number++;
+}
+
+// console.log(preIncrement(1),postIncrement(1))  //result = 2 ; 1
