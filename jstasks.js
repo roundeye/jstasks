@@ -108,22 +108,22 @@ function assignmentResult() {
 // undefined + 1
 // " \t \n" - 2
 function typeConversion() {
-   let a = "" + 1 + 0;
-   let b = "" - 1 + 0;
-   let c = true + false;
-   let d = 6 / "3";
-   let e = "2" * "3";
-   let f = 4 + 5 + "px";
-   let g = "$" + 4 + 5;
-   let h = "4" - 2;
-   let i = "4px" - 2;
-   let j = 7 / 0;
-   let k = "  -9  " + 5;
-   let l = "  -9  " - 5;
-   let m = null + 1;
-   let n = undefined + 1;
-   let o = " \t \n" - 2;
-   let arr = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o]
+    let a = "" + 1 + 0;
+    let b = "" - 1 + 0;
+    let c = true + false;
+    let d = 6 / "3";
+    let e = "2" * "3";
+    let f = 4 + 5 + "px";
+    let g = "$" + 4 + 5;
+    let h = "4" - 2;
+    let i = "4px" - 2;
+    let j = 7 / 0;
+    let k = "  -9  " + 5;
+    let l = "  -9  " - 5;
+    let m = null + 1;
+    let n = undefined + 1;
+    let o = " \t \n" - 2;
+    let arr = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o]
     return arr
 }
 // console.log (typeConversion())
@@ -135,7 +135,135 @@ function typeConversion() {
 // let a = prompt("Первое число?", 1);
 // let b = prompt("Второе число?", 2);
 // alert(a + b); // 1
+function correctAddition(){
+    let a = "1";
+    let b = "2";
+    return +a + +b    
+}
+// console.log(correctAddition()); // 12
 
-let a = "1"
-let b = "2"
-// console.log(+a + +b); // 12
+// 10.Что выведет alert (ИЛИ)?
+// Что выведет код ниже?
+// alert( null || 2 || undefined );
+function or() {
+    return null || 2 || undefined
+}
+// console.log(or()); //2
+
+// 11. Что выведет alert (ИЛИ)?
+// Что выведет код ниже?
+// alert( alert(1) || 2 || alert(3) );
+function or2() {
+    return 1 || 2 || 3
+}
+// console.log(or2())
+
+// 12. Что выведет этот код?
+// Что выведет код ниже?
+// alert( null || 2 && 3 || 4 );
+function checkLogical() {
+    return null || 2 && 3 || 4
+}
+// console.log (checkLogical());
+
+// 13. Проверка значения из диапазона
+// Напишите условие if для проверки, что переменная age находится в диапазоне между 14 и 90 включительно.
+function checkRange(age) {
+    if (age <= 90 && age >= 14) {
+        return true
+    }
+    return false
+}
+// console.log(checkRange(14))
+// console.log(checkRange(90))
+// console.log(checkRange(29))
+// console.log(checkRange(91))
+// console.log(checkRange(13))
+
+// 13.2 Через регулярное выражение
+function checkRangeNew(age) {
+    return (age <= 90 && age >=14) ? true : false;
+}
+// console.log(checkRangeNew(14))
+// console.log(checkRangeNew(90))
+// console.log(checkRangeNew(29))
+// console.log(checkRangeNew(91))
+// console.log(checkRangeNew(13))
+
+// 14. Проверка значения вне диапазона
+// Напишите условие if для проверки, что значение переменной age НЕ находится в диапазоне 14 и 90 включительно.
+// Напишите два варианта: первый с использованием оператора НЕ !, второй – без этого оператора.
+function checkOutRange1(age) {
+    return (age < 90 && age > 14) ? false : true;
+}
+// console.log(checkOutRange1(14))
+// console.log(checkOutRange1(90))
+// console.log(checkOutRange1(29))
+// console.log(checkOutRange1(91))
+// console.log(checkOutRange1(13))
+
+function checkOutRange2(age) {
+    return !(age < 90 && age > 14) ? true : false;
+}
+// console.log(checkOutRange2(14))
+// console.log(checkOutRange2(90))
+// console.log(checkOutRange2(29))
+// console.log(checkOutRange2(91))
+// console.log(checkOutRange2(13))
+
+// 15. Вопрос о "if"
+// Какие из перечисленных ниже alert выполнятся?
+// Какие конкретно значения будут результатами выражений в условиях if(...)?
+// if (-1 || 0) alert( 'first' );
+// if (-1 && 0) alert( 'second' );
+// if (null || -1 && 1) alert( 'third' );
+
+function checkAlert() {
+    let firstIf, secondIf, thirdIf
+    if (-1 || 0) {
+        firstIf = `выполнится`
+    } else {
+        firstIf = `не выполнится`
+    }
+    if (-1 && 0) {
+        secondIf = `выполнится`
+    } else {
+        secondIf = `не выполнится`
+    }
+    if (null || -1 && 1) {
+        thirdIf = `выполнится`
+    } else {
+        thirdIf = `не выплнится`
+    }
+
+    let arr = [firstIf, secondIf, thirdIf];
+
+    return arr
+}
+// console.log(checkAlert())
+
+// 16. Проверка логина
+// Напишите код, который будет спрашивать логин с помощью prompt.
+// Если посетитель вводит «Админ», то prompt запрашивает пароль, если ничего не введено или нажата клавиша Esc – показать «Отменено», в противном случае отобразить «Я вас не знаю».
+// Пароль проверять так:
+// Если введён пароль «Я главный», то выводить «Здравствуйте!»,
+// Иначе – «Неверный пароль»,
+// При отмене – «Отменено».
+// Блок-схема: здесь в последней задаче https://learn.javascript.ru/logical-operators
+// Для решения используйте вложенные блоки if. Обращайте внимание на стиль и читаемость кода.
+// Подсказка: передача пустого ввода в приглашение prompt возвращает пустую строку ''. Нажатие клавиши Esc во время запроса возвращаетnull.
+
+function checkLogin(login, pass) {
+    if ( (login === 'Админ') && (pass === 'Я главный') ) {
+        return 'Здравствуйте'
+    }
+    if ( (login === 'Админ') && (pass !== 'Я главный') ) {
+        return 'Неверный пароль'
+    }
+    if (login !== 'Админ') {
+        return 'Отменено'
+    }
+}
+// console.log(checkLogin('Админ', 'Я главный'))
+// console.log(checkLogin('Админ', 'sdfsdf'))
+// console.log(checkLogin('sdcsdc', 'Я главный'))
