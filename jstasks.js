@@ -76,5 +76,54 @@ function preIncrement(number) {
 function postIncrement(number) {
     return number++;
 }
-
 // console.log(preIncrement(1),postIncrement(1))  //result = 2 ; 1
+
+// 7. Результат присваивания
+// Чему будут равны переменные a и x после исполнения кода в примере ниже?
+// let a = 2;
+// let x = 1 + (a *= 2);
+
+function assignmentResult() {
+    let a = 2;
+    let x = 1 + (a *= 2);
+    return x;
+}
+// console.log(assignmentResult()); // 5
+
+// 8. Преобразование типов
+// Какой результат будет у выражений ниже?
+// "" + 1 + 0
+// "" - 1 + 0
+// true + false
+// 6 / "3"
+// "2" * "3"
+// 4 + 5 + "px"
+// "$" + 4 + 5
+// "4" - 2
+// "4px" - 2
+// 7 / 0
+// "  -9  " + 5
+// "  -9  " - 5
+// null + 1
+// undefined + 1
+// " \t \n" - 2
+function typeConversion() {
+   let a = "" + 1 + 0;
+   let b = "" - 1 + 0;
+   let c = true + false;
+   let d = 6 / "3";
+   let e = "2" * "3";
+   let f = 4 + 5 + "px";
+   let g = "$" + 4 + 5;
+   let h = "4" - 2;
+   let i = "4px" - 2;
+   let j = 7 / 0;
+   let k = "  -9  " + 5;
+   let l = "  -9  " - 5;
+   let m = null + 1;
+   let n = undefined + 1;
+   let o = " \t \n" - 2;
+   let arr = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o]
+    return arr
+}
+// console.log (typeConversion())
