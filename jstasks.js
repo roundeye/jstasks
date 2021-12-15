@@ -267,3 +267,22 @@ function checkLogin(login, pass) {
 // console.log(checkLogin('Админ', 'Я главный'))
 // console.log(checkLogin('Админ', 'sdfsdf'))
 // console.log(checkLogin('sdcsdc', 'Я главный'))
+
+// 16.1 
+// let userName = prompt('кто там?', '');
+
+// if (userName == 'Админ') {
+//   let pass = prompt('Пароль?', '')
+  
+//   if (pass == 'Я главный') {
+//     alert('Здравствуйте')
+//   } else if (pass == '' || pass == null) {
+//     alert('Отменено')
+//   } else {
+//     alert('Неверный пароль')
+//   }
+// } else if (userName == '' || userName == null) {
+//   alert('Отменено')
+// } else {
+//   alert('Я вас не знаю')
+// }
