@@ -7,7 +7,7 @@ function randomM(min, max) {
 // console.log(randomM(1, 5));
 
 /* 2. Сделать первый символ заглавным
-Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым символом. 
+Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым символом.
 Например: ucFirst("вася") == "Вася"; */
 function ucFirst(str) {
     if (!str) return str;
@@ -26,7 +26,7 @@ checkSpam('free xxxxx') == true
 checkSpam("innocent rabbit") == false */
 function checkSpam(str) {
     let newStr = str.toLowerCase();
-    return newStr.includes('viagra') || newStr.includes('xxx') 
+    return newStr.includes('viagra') || newStr.includes('xxx')
 }
 // console.log(checkSpam('buy ViAgRA now'));
 // console.log(checkSpam('free xxxxx'));
@@ -66,11 +66,11 @@ function extractCurrencyValue(str) {
 /* 6. Постфиксная и префиксная формы
 Чему будут равны переменные a, b, c и d в примере ниже?
 let a = 1, b = 1;
-let c = ++a; // ? 
+let c = ++a; // ?
 let d = b++; // ? */
 
 function preIncrement(number) {
-    return ++number; 
+    return ++number;
 }
 
 function postIncrement(number) {
@@ -138,7 +138,7 @@ alert(a + b); // 1 */
 function correctAddition(){
     let a = "1";
     let b = "2";
-    return +a + +b    
+    return +a + +b
 }
 // console.log(correctAddition()); // 12
 
@@ -275,7 +275,7 @@ function checkLogin(login, pass) {
 
 if (userName == 'Админ') {
   let pass = prompt('Пароль?', '')
-  
+
   if (pass == 'Я главный') {
     alert('Здравствуйте')
   } else if (pass == '' || pass == null) {
@@ -311,7 +311,7 @@ else
 // Исправленный код
 /* function pow(x, n) {
     let result = 1;
-    
+
     for (let i = 0; i < n; i++) {
         result *= x;
     }
@@ -319,12 +319,12 @@ else
     return result;
 }
 
-let x = prompt('x?', ''); 
+let x = prompt('x?', '');
 let n = prompt('n?', '');
 
     if (n <= 0) {
         alert(`Степень ${n} не поддерживается, введите целую степень, большую 0`);
-} else { 
+} else {
     alert( pow(x, n) );
 } */
 
@@ -393,8 +393,86 @@ function sayHello() {
  let userName = prompt('Введите ваше имя');
 
  if (isValid(userName)) {
-   print(`Welcome back, ${userName}!`);
+    print(`Welcome back, ${userName}!`);
  } else {
-   print('Некорректное имя');
+    print('Некорректное имя');
  }
 }
+
+/* 20.# Сделать первый символ заглавным
+
+Напишите функцию `ucFirst(str)`, возвращающую строку `str` с заглавным первым символом. Например:
+
+```js
+ucFirst('вася') === 'Вася';
+```
+
+Обратите внимание, что функция также должна работать со строкой:
+- содержащей только один символ `'В'`
+- не содержащей символы `''`
+```js
+ucFirst('в') === 'В';
+ucFirst('') === '';
+``` */
+
+function ucFirst(str) {
+    if (str === '') {
+        return str;
+    }
+
+    return str[0].toUpperCase() + str.slice(1);
+}
+
+// console.log(ucFirst('а'));
+// console.log(ucFirst('я вас призераю'));
+// console.log(ucFirst('П'));
+// console.log(ucFirst(''));
+
+/* 21. # Проверка на спам
+
+Напишите функцию `checkSpam(str)`, возвращающую `true`, если `str` содержит `'1xBet'` или `'XXX'`, а иначе `false`.
+
+Функция должна быть нечувствительна к регистру:
+
+```js
+checkSpam('1XbeT now') === true
+checkSpam('free xxxxx') === true
+checkSpam('innocent rabbit') === false
+``` */
+
+function checkSpam(str) {
+    let upperStr = str.toUpperCase();
+    let checkWord1 = '1xBet'.toUpperCase();
+    let checkWord2 = 'XXX';
+
+    if (upperStr.includes(checkWord1) === true ||
+        upperStr.includes(checkWord2) === true) {
+            return true;
+    }
+
+    return false;
+  }
+
+// console.log(checkSpam('1XbeT now'));
+// console.log(checkSpam('free xxxxx'));
+// console.log(checkSpam('innocent rabbit'));
+
+/* 22. # Усечение строки
+Создайте функцию `truncate(str, maxlength)`, которая проверяет длину строки `str` и, если она превосходит `maxlength`, заменяет конец `str` на `"…"`, так, чтобы её длина стала равна `maxlength`.
+Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
+Например:
+```js
+truncate('Вот, что мне хотелось бы сказать на эту тему:', 20) === 'Вот, что мне хотело…';
+truncate('Всем привет!', 20) === 'Всем привет!';
+```
+Обратите внимание, что в решении нужно использовать именно троеточие из условия (просто скопируйте и вставьте его) :) */
+
+function truncate(str, maxlength) {
+    if (str.length <= maxlength) {
+        return str;
+    }
+
+    if (str.length > maxlength) {
+        return str.slice(0, maxlength - 1) + '…';
+    }
+  }
