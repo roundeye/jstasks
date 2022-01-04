@@ -468,11 +468,26 @@ truncate('Всем привет!', 20) === 'Всем привет!';
 Обратите внимание, что в решении нужно использовать именно троеточие из условия (просто скопируйте и вставьте его) :) */
 
 function truncate(str, maxlength) {
-    if (str.length <= maxlength) {
-        return str;
-    }
-
-    if (str.length > maxlength) {
-        return str.slice(0, maxlength - 1) + '…';
-    }
+  if (str.length <= maxlength) {
+    return str;
   }
+
+  if (str.length > maxlength) {
+    return str.slice(0, maxlength - 1) + '…';
+  }
+}
+
+//   23. Opposite number
+  function opposite(number) {
+    return -number;
+  }
+
+//   24. Even or Odd
+function even_or_odd(number) {
+  if (number % 2 === 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+  }
+}
+   
