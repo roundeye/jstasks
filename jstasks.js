@@ -491,7 +491,7 @@ function even_or_odd(number) {
   }
 }
 
-// // 25. century
+// 25. century
 // The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
 function century(year) {
   if (year % 100 === 0) {
@@ -500,4 +500,16 @@ function century(year) {
     return Math.floor(year/100) + 1;
   }
 }
+
+/* 26. Abbreviate a Two Word Name
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+The output should be two capital letters with a dot separating them.
+It should look like this:
+Sam Harris => S.H
+patrick feeney => P.F */
+function abbrevName(name){
+  let arrWords = name.split(' ');
+  return arrWords[0][0].toUpperCase() + '.' + arrWords[1][0].toUpperCase()
+}
+
    
