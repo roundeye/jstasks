@@ -523,8 +523,6 @@ function solution(str){
   maskify(     "64607935616") ==      "#######5616"
   maskify(               "1") ==                "1"
   maskify(                "") ==                 ""
-  
-  // "What was the name of your first pet?"
   maskify("Skippy")                                   == "##ippy"
   maskify("Nananananananananananananananana Batman!") == "####################################man!" */
   function maskify(cc) {
@@ -539,3 +537,8 @@ function solution(str){
     
     return arr.join('');
   }
+
+//   29. Remove First and Last Character
+function removeChar(str){
+  return str.slice(1, str.length - 1)
+}
