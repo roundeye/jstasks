@@ -517,5 +517,25 @@ function solution(str){
     return str.split('').reverse().join('')
   }
 
-
-   
+/*   28. Credit Card Mask
+  Examples
+  maskify("4556364607935616") == "############5616"
+  maskify(     "64607935616") ==      "#######5616"
+  maskify(               "1") ==                "1"
+  maskify(                "") ==                 ""
+  
+  // "What was the name of your first pet?"
+  maskify("Skippy")                                   == "##ippy"
+  maskify("Nananananananananananananananana Batman!") == "####################################man!" */
+  function maskify(cc) {
+    if (cc == '' || cc.length <= 4) {
+      return cc
+    }
+    
+    let arr = cc.split('');
+    for (let i = 0; i < cc.length - 4; i++) {
+      arr[i] = '#';
+    }
+    
+    return arr.join('');
+  }
