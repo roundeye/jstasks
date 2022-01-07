@@ -512,4 +512,10 @@ function abbrevName(name){
   return arrWords[0][0].toUpperCase() + '.' + arrWords[1][0].toUpperCase()
 }
 
+// 27. Reversed Strings
+function solution(str){
+    return str.split('').reverse().join('')
+  }
+
+
    
