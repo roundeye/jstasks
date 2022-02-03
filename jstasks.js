@@ -587,3 +587,18 @@ function countSheep(num){
   
   return str;
 }
+
+/* 33. Вопрос о "if"
+Какие из перечисленных ниже alert выполнятся?
+Какие конкретно значения будут результатами выражений в условиях if(...)?
+if (-1 || 0) alert( 'first' );
+if (-1 && 0) alert( 'second' );
+if (null || -1 && 1) alert( 'third' ); */
+function checkAlert() {
+  let firstValue = (-1 || 0); 
+  let secondValue = (-1 && 0);
+  let thirdValue = (null || -1 && 1);
+  let arr = [firstValue, secondValue, thirdValue]
+  return arr
+}
+// console.log(checkAlert())
