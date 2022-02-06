@@ -767,13 +767,7 @@ Given a string and an object/array you need to return a formatted string. Replac
 Inherited object properties should not be applied */
 
 function format(str) {
-  // for (let key in obj) {
-  //   if (str.includes(`{${key}}`)) {
-      str.replace(/foo/g, 'Jack');
-  //   }
-  // }
-  
-  return str
+  return str.replace(/{foo}/i, 'Jack');
 }
 
 let strTest = 'Hello {foo} - make me a {bar}'
