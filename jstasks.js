@@ -761,3 +761,27 @@ function sumSalary(salaries) {
 }
 
 // console.log(sumSalary(salariesEmployees))
+
+/* 40. String insert values
+Given a string and an object/array you need to return a formatted string. Replace all occurrences in the string where the name of a key in the object is surrounded by curly brackets.
+Inherited object properties should not be applied */
+
+function format(str) {
+  // for (let key in obj) {
+  //   if (str.includes(`{${key}}`)) {
+      str.replace(/foo/g, 'Jack');
+  //   }
+  // }
+  
+  return str
+}
+
+let strTest = 'Hello {foo} - make me a {bar}'
+
+let objTest = {
+  foo: 'Jack',
+  bar: 'sandwich'
+}
+
+console.log(format(strTest));
+
