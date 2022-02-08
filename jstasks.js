@@ -766,8 +766,23 @@ function sumSalary(salaries) {
 Given a string and an object/array you need to return a formatted string. Replace all occurrences in the string where the name of a key in the object is surrounded by curly brackets.
 Inherited object properties should not be applied */
 
-function format(str) {
-  return str.replace(/{foo}/i, 'Jack');
+// function format(str, obj) {
+//   return str.replace(/{foo}/, 'Jack').replace(/{bar}/, 'sandwch')
+// }
+
+// let strTest = 'Hello {foo} - make me a {bar}'
+
+// let objTest = {
+//   foo: 'Jack',
+//   bar: 'sandwich'
+// }
+
+function format(str, obj) {
+  for (let key in obj) {
+    let searchText = `{${key}}`;
+    str.replace(new RegExp(searchText), obj[key]);
+  }
+return str
 }
 
 let strTest = 'Hello {foo} - make me a {bar}'
@@ -777,5 +792,5 @@ let objTest = {
   bar: 'sandwich'
 }
 
-console.log(format(strTest));
+console.log(format(strTest, objTest));
 
