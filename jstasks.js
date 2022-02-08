@@ -779,8 +779,9 @@ Inherited object properties should not be applied */
 
 function format(str, obj) {
   for (let key in obj) {
-    let searchText = `{${key}}`;
-    str.replace(new RegExp(searchText), obj[key]);
+    let word1 = `{${key}}`;
+    let word2 = obj[key];
+    str = str.replace(new RegExp(word1), word2);
   }
 return str
 }
