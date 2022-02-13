@@ -778,12 +778,26 @@ Inherited object properties should not be applied */
 // }
 
 function format(str, obj) {
-  for (let key in obj) {
-    let word1 = `{${key}}`;
-    let word2 = obj[key];
-    str = str.replace(new RegExp(word1), word2);
+  if (!Array.isArray(obj)) {
+    for (let key in obj) {
+      let word1 = `{${key}}`;
+      let word2 = obj[key];
+
+      str = str.replace(new RegExp(word1), word2);
+    }
+
+  return str
   }
-return str
+
+  for (let i = 0; i < obj.length; i++) {
+    let word1 = '{' + i + '}';
+    let word2 = obj[i];
+
+    str = str.replace(new RegExp(/\{/ + i + /\}/), word2);
+    // str = str.replace(/\{/ + i + /\}/, word2);
+  }
+
+  return str
 }
 
 let strTest = 'Hello {foo} - make me a {bar}'
@@ -793,5 +807,8 @@ let objTest = {
   bar: 'sandwich'
 }
 
-console.log(format(strTest, objTest));
+let arrTest = ['Jack', 'sandwich'];
+
+console.log(format('Hello {0} - make me a {1}', ['Jack', 'sandwich']));
+
 
