@@ -783,18 +783,17 @@ function format(str, obj) {
       let word1 = `{${key}}`;
       let word2 = obj[key];
 
-      str = str.replace(new RegExp(word1), word2);
+      str = str.replace(new RegExp(word1, 'g'), word2);
     }
 
   return str
   }
 
   for (let i = 0; i < obj.length; i++) {
-    let word1 = '{' + i + '}';
+    let word1 = `\\{${i}}`;
     let word2 = obj[i];
 
-    str = str.replace(new RegExp(/\{/ + i + /\}/), word2);
-    // str = str.replace(/\{/ + i + /\}/, word2);
+    str = str.replace(new RegExp(word1, 'g'), word2);
   }
 
   return str
