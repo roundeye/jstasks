@@ -808,6 +808,110 @@ let objTest = {
 
 let arrTest = ['Jack', 'sandwich'];
 
-console.log(format('Hello {0} - make me a {1}', ['Jack', 'sandwich']));
+// console.log(format('Hello {0} - make me a {1}', ['Jack', 'sandwich']));
 
+/* 41. Проверка синтаксиса
+Каким будет результат выполнения этого кода?
 
+let user = {
+  name: "Джон",
+  go: function() { alert(this.name) }
+}
+
+(user.go)() */
+
+let user2 = {
+  name: "Джон",
+  go: function() { return this.name }
+}
+
+// console.log(user2.go());
+// console.log((user2.go)());
+
+/* 42. Объясните значение "this"
+В представленном ниже коде мы намерены вызвать obj.go() метод 4 раза подряд.
+
+Но вызовы (1) и (2) работают иначе, чем (3) и (4). Почему?
+
+let obj, method;
+
+obj = {
+  go: function() { alert(this); }
+};
+
+obj.go();               // (1) [object Object]
+
+(obj.go)();             // (2) [object Object]
+
+(method = obj.go)();    // (3) undefined
+
+(obj.go || obj.stop)(); // (4) undefined */
+
+obj = {
+  go: function() { return this }
+};
+
+// console.log(obj.go())
+
+/* 43. Использование "this" в литерале объекта
+важность: 5
+Здесь функция makeUser возвращает объект.
+
+Каким будет результат при обращении к свойству объекта ref? Почему?
+
+function makeUser() {
+  return {
+    name: "Джон",
+    ref: this
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref.name ); // Каким будет результат? */
+
+function makeUser() {
+  return {
+    name: "Джон",
+    ref: this
+  };
+};
+
+let user3 = makeUser();
+
+// console.log(user3.ref.name); // makeUser().ref.name, this теряется
+
+/* 44. Создайте калькулятор
+Создайте объект calculator (калькулятор) с тремя методами:
+
+read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
+sum() (суммировать) возвращает сумму сохранённых значений.
+mul() (умножить) перемножает сохранённые значения и возвращает результат.
+let calculator = {
+  // ... ваш код ...
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() ); */
+
+let calculator = {
+  read(a, b) {
+    this.a = a;
+    this.b = b;
+  },
+
+  sum() {
+    return this['a'] + this['b'];
+  },
+
+  mul() {
+    return this['a'] * this['b'];
+  }
+}
+
+// console.log(
+//   calculator.read(2, 3),
+//   calculator.sum(),
+//   calculator.mul()
+//   )
