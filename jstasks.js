@@ -1008,11 +1008,21 @@ let styles = ['Джаз','Блюз'];
 styles.push('Рок-н-ролл');
 // console.log(styles);
 styles[Math.floor((styles.length - 1) / 2)] = 'Классика';
-console.log(styles);
+// console.log(styles);
 styles.shift();
 // console.log(styles);
 styles.unshift('Рэп','Регги')
 // console.log(styles);
+
+// 48. Вызов в контексте массива
+
+let arr = ["a", "b"];
+
+arr.push(function() {
+  return this
+})
+
+// console.log(arr[2]());
 
 
 
