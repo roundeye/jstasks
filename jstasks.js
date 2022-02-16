@@ -979,10 +979,12 @@ let shoppingCart = fruits;
 shoppingCart.push("Банан");
 
 // что в fruits?
+// console.log(fruits.length)
+
 
 // Должно быть ["Яблоки", "Груша", "Апельсин", "Банан"]
 // length = 4
-console.log(fruits.length)
+
 
 
 /* 47. Операции с массивами
@@ -1002,15 +1004,15 @@ console.log(fruits.length)
 Рэп, Регги, Классика, Рок-н-ролл */
 
 let styles = ['Джаз','Блюз'];
-console.log(styles);
+// console.log(styles);
 styles.push('Рок-н-ролл');
-console.log(styles);
-styles[1] = 'Классика';
+// console.log(styles);
+styles[Math.floor((styles.length - 1) / 2)] = 'Классика';
 console.log(styles);
 styles.shift();
-console.log(styles);
+// console.log(styles);
 styles.unshift('Рэп','Регги')
-console.log(styles);
+// console.log(styles);
 
 
 
