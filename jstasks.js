@@ -1108,3 +1108,31 @@ function getMaxSubSum(arr) {
   return maxSum;
 }
 
+// 50. Проверка ссылок ф-ий и объектов (не задача)
+
+// Хранение по ссылке функции
+let multiply = function(a, b) {
+  return a * b;
+}
+let calculate = multiply;
+multiply = null;
+
+// console.log(calculate(2, 3));
+// console.log(multiply)
+
+// Хранение по ссылке объекты
+
+let obj1 = {
+  name: 'Den',
+  bro: 'pes'
+}
+
+let obj2 = obj1;
+obj1 = null;
+
+// console.log(obj2);
+// console.log(obj1);
+
+// хранение по ссылке в функциях работает также, как в обьектах.
+// доступ к обьекту сохраняется даже, если оригинал занулили
+
