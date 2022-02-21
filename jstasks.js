@@ -1136,3 +1136,30 @@ obj1 = null;
 // хранение по ссылке в функциях работает также, как в обьектах.
 // доступ к обьекту сохраняется даже, если оригинал занулили
 
+// 51. Задание функции
+
+// декларативный 
+
+function pesDec(firstName, secondName) {
+
+}
+
+// expression
+let pesExpr = function(firstName, secondName) {
+
+};
+
+// arrow 1
+let pesArrow1 = (firstName, secondName) => {
+
+};
+
+// arrow2
+let pesArrow2 = firstName => {
+
+};
+
+// arrow3
+let pesArrow3 = firstname => firstname + 'man';
+
+console.log(pesArrow3('pes'));
