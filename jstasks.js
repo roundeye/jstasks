@@ -1136,10 +1136,9 @@ obj1 = null;
 // хранение по ссылке в функциях работает также, как в обьектах.
 // доступ к обьекту сохраняется даже, если оригинал занулили
 
-// 51. Задание функции
+// 51. Задание функций
 
 // декларативный 
-
 function pesDec(firstName, secondName) {
 
 }
@@ -1162,4 +1161,22 @@ let pesArrow2 = firstName => {
 // arrow3
 let pesArrow3 = firstname => firstname + 'man';
 
-console.log(pesArrow3('pes'));
+// console.log(pesArrow3('pes'));
+
+// 52. Методы массивов
+
+//splice
+let pesArray = ['den', 'vova', 'dachok'];
+console.log(pesArray);
+
+// pesArray.splice(1, 1) //[ 'den', 'dachok' ]
+// pesArray.splice(0, 0, 'Shredy') //[ 'Shredy', 'den', 'vova', 'dachok' ]
+// pesArray.splice(-1, 1, 'Boris') //[ 'den', 'vova', 'Boris' ]
+// pesArray.splice(-1, 0, 'Zheka') // [ 'den', 'vova', 'Zheka', 'dachok' ]
+// pesArray.splice(0, 3, 'delete') //[ 'delete' ]
+// pesArray.splice(0, 4, 'mmm') //[ 'mmm' ]
+
+console.log(pesArray);
+
+
+
