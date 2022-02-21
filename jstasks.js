@@ -1167,16 +1167,36 @@ let pesArrow3 = firstname => firstname + 'man';
 
 //splice
 let pesArray = ['den', 'vova', 'dachok'];
-console.log(pesArray);
+// console.log(pesArray);
 
-// pesArray.splice(1, 1) //[ 'den', 'dachok' ]
-// pesArray.splice(0, 0, 'Shredy') //[ 'Shredy', 'den', 'vova', 'dachok' ]
-// pesArray.splice(-1, 1, 'Boris') //[ 'den', 'vova', 'Boris' ]
-// pesArray.splice(-1, 0, 'Zheka') // [ 'den', 'vova', 'Zheka', 'dachok' ]
-// pesArray.splice(0, 3, 'delete') //[ 'delete' ]
-// pesArray.splice(0, 4, 'mmm') //[ 'mmm' ]
+// pesArray.splice(1, 1); //[ 'den', 'dachok' ]
+// pesArray.splice(0, 0, 'Shredy'); //[ 'Shredy', 'den', 'vova', 'dachok' ]
+// pesArray.splice(-1, 1, 'Boris'); //[ 'den', 'vova', 'Boris' ]
+// pesArray.splice(-1, 0, 'Zheka'); // [ 'den', 'vova', 'Zheka', 'dachok' ]
+// pesArray.splice(0, 3, 'delete'); //[ 'delete' ]
+// pesArray.splice(0, 4, 'mmm'); //[ 'mmm' ]
+pesArray.splice(-2, 2, 1)
 
-console.log(pesArray);
+// let resultOfSplice = pesArray.splice(0, 1, 'Morzh');
+// console.log(resultOfSplice);
+
+// console.log(pesArray);
+
+//slice
+let sliceArray = pesArray.slice(0, 1);
+let sliceArray2 = pesArray.slice(0);
+let sliceArray3 = pesArray.slice(-1);
+
+// console.log(sliceArray);
+// console.log(sliceArray2);
+// console.log(sliceArray3);
+
+//concat
+let arrNumbers = [1, 2, 3, 4, 5, 6];
+
+let newArr = arrNumbers.concat([99, 98, 97]);
+
+console.log(newArr)
 
 
 
