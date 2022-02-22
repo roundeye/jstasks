@@ -1275,9 +1275,16 @@ function compare(a, b) {
   if (a < b) return -1; // если первое значение меньше второго
 }
 
-console.log(arrNumbers2.sort()) //[ 1, 15, 2 ] лексикграфическая сортировка
-console.log(arrNumbers2.sort(compare)) //[ 1, 2, 15 ]
-console.log([1, -2, -15, 2, 0, 8].sort())
-console.log([1, -2, -15, 2, 0, 8].sort((a, b) => {console.log(a + " <> " + b)}))
-console.log(arrNumbers2.sort(function pes(a, b) {return a - b}))
-console.log(arrNumbers2.sort((a, b) => a - b))
+// console.log(arrNumbers2.sort()) //[ 1, 15, 2 ] лексикграфическая сортировка
+// console.log(arrNumbers2.sort(compare)) //[ 1, 2, 15 ]
+// console.log([1, -2, -15, 2, 0, 8].sort())
+// console.log([1, -2, -15, 2, 0, 8].sort((a, b) => {console.log(a + " <> " + b)}))
+// console.log(arrNumbers2.sort(function pes(a, b) {return a - b}))
+// console.log(arrNumbers2.sort((a, b) => a - b))
+
+//reverse
+let arrNumbers3 = [1, 2, 3, 4, 5]
+
+// console.log(arrNumbers3.reverse())
+
+//split и join
