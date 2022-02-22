@@ -1231,6 +1231,24 @@ dragons.forEach(dragon => {
   }
 });
 
-console.log(dragonsNames)
+// console.log(dragonsNames)
 
+// indexOf/lastIndexOf и includes
+let arrIndex = ['pes', 'den', 'klon']
+// console.log(arrIndex.indexOf('pes'));
+// console.log(arrIndex.lastIndexOf('den'));
+// console.log(arrIndex.lastIndexOf('klon'));
+// console.log(arrIndex.includes('pes'));
 
+//find и findindex
+let users = [
+  {id: 1, name: "Вася"},
+  {id: 2, name: "Петя"},
+  {id: 3, name: "Маша"}
+];
+
+let elUsers = users.find(item => item.id == 2);
+let elIndexUsers = users.findIndex(item => item.id == 1)
+
+// console.log(elUsers)
+// console.log(elIndexUsers)
