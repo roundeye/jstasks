@@ -1248,7 +1248,20 @@ let users = [
 ];
 
 let elUsers = users.find(item => item.id == 2);
-let elIndexUsers = users.findIndex(item => item.id == 1)
+let elIndexUsers = users.findIndex(item => item.id == 1);
 
-// console.log(elUsers)
-// console.log(elIndexUsers)
+// console.log(elUsers);
+// console.log(elIndexUsers);
+
+// filter
+let someUsers = users.filter(x => x.name == 'Вася');
+
+// console.log(someUsers)
+
+// map
+let arrMap = ['pes', 'pes', 'pes'];
+let newArrMap = arrMap.map(x => x.length);
+let newArrMap2 = arrMap.map(x => {if (x === 'pes'){return 'den'}});
+
+// console.log(newArrMap);
+// console.log(newArrMap2);
