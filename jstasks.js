@@ -1193,10 +1193,44 @@ let sliceArray3 = pesArray.slice(-1);
 
 //concat
 let arrNumbers = [1, 2, 3, 4, 5, 6];
+let emptyArr = [];
 
 let newArr = arrNumbers.concat([99, 98, 97]);
+let newArr2 = emptyArr.concat(123, 32222, 'PES', 'lol', [1111, 2222, 3333]);
+let newArr3 = arrNumbers.concat({name: 'Den', secondName: 'Pes'});
+let newArr4 = arrNumbers.concat({0: 'Den', 1: 'Pes', [Symbol.isConcatSpreadable]: true, length: 2})
 
-console.log(newArr)
+// console.log(newArr);
+// console.log(newArr2);
+// console.log(newArr3);
+// console.log(newArr4)
 
+//forEach
+let dragons = [
+  {
+    name: 'Gorunych',
+    type: 'Big',
+    features: ['fire', '3 heads'],
+  },
+  {
+    name: 'Fluffy',
+    type: 'Small',
+    features: ['fire', 'big tale'],
+  },
+  {
+    name: 'Roman',
+    type: 'Medium',
+    features: ['Super vision', 'strength'],
+  }
+];
+
+let dragonsNames = [];
+dragons.forEach(dragon => {
+  if (dragon.type !== 'Small') {
+    dragonsNames.push(dragon.name);
+  }
+});
+
+console.log(dragonsNames)
 
 
