@@ -1288,3 +1288,47 @@ let arrNumbers3 = [1, 2, 3, 4, 5]
 // console.log(arrNumbers3.reverse())
 
 //split и join
+let str = 'Den Pes Pesovich';
+let arrForJoin = ['pes', 'den', 'pes']
+
+// console.log(str.split(' '))
+// console.log(arrForJoin.join(', '))
+
+// reduce/reduceRight
+let reduceArr = [1, 2, 3, 4, 5, 6, 7];
+
+let result = reduceArr.reduce((sum, item, index, array) => {
+  if (array[index] % 2 === 0) {
+    sum = sum + item
+  }
+  return sum}, 0);
+
+// console.log(result)
+
+// Array.isArray
+let resultArray = Array.isArray(reduceArr);
+
+// console.log(resultArray)
+
+// thisArg
+let army = {
+  minAge: 18,
+  maxAge: 27,
+  canJoin(user) {
+    return user.age >= this.minAge && user.age < this.maxAge;
+  }
+};
+
+let userss = [
+  {age: 16},
+  {age: 20},
+  {age: 23},
+  {age: 30}
+];
+
+// найти пользователей, для которых army.canJoin возвращает true
+let soldiers = userss.filter(army.canJoin, army);
+
+// console.log(soldiers.length); // 2
+// console.log(soldiers[0].age); // 20
+// console.log(soldiers[1].age); // 23
