@@ -1354,7 +1354,16 @@ function camelize(str) {
 return arr.join('')
 }
 
-// console.log(camelize('list-style-image'))
+console.log(camelize('list-style-image'))
+
+
+function camelize2(str) {
+  return str.split('-').map((x, index) => index == 0 ? x : x[0].toUpperCase() + x.slice(1)).join('')
+}
+
+console.log(camelize2('list-style-image'))
+
+
 
 /* 54. Фильтрация по диапазону
 Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
@@ -1380,3 +1389,21 @@ function filterRange(arr, a, b) {
 }
 
 console.log(filterRange([5, 3, 8, 1], 1, 4))
+
+function filterRange2(arr, a, b) {
+  return arr.filter(x => x >= a && x <= b)
+}
+
+console.log(filterRange2([5, 3, 8, 1], 1, 4))
+
+
+/* 55. Фильтрация по диапазону "на месте"
+Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, 
+которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+Функция должна изменять принимаемый массив и ничего не возвращать.
+
+Например:
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+alert( arr ); // [3, 1] */
