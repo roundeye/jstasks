@@ -1354,14 +1354,14 @@ function camelize(str) {
 return arr.join('')
 }
 
-console.log(camelize('list-style-image'))
+// console.log(camelize('list-style-image'))
 
 
 function camelize2(str) {
   return str.split('-').map((x, index) => index == 0 ? x : x[0].toUpperCase() + x.slice(1)).join('')
 }
 
-console.log(camelize2('list-style-image'))
+// console.log(camelize2('list-style-image'))
 
 
 
@@ -1388,13 +1388,13 @@ function filterRange(arr, a, b) {
   return resultArr
 }
 
-console.log(filterRange([5, 3, 8, 1], 1, 4))
+// console.log(filterRange([5, 3, 8, 1], 1, 4))
 
 function filterRange2(arr, a, b) {
   return arr.filter(x => x >= a && x <= b)
 }
 
-console.log(filterRange2([5, 3, 8, 1], 1, 4))
+// console.log(filterRange2([5, 3, 8, 1], 1, 4))
 
 
 /* 55. Фильтрация по диапазону "на месте"
@@ -1407,3 +1407,18 @@ let arr = [5, 3, 8, 1];
 
 filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
 alert( arr ); // [3, 1] */
+
+function filterRangeInPlace(arr, a, b) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < a || arr[i] > b) {
+      arr.splice(i, 1)
+      i--;
+    }
+  }
+}
+
+let arr2 = [5, 3, 8, 1]
+
+filterRangeInPlace(arr2, 1, 4)
+
+console.log(arr2)
