@@ -1422,3 +1422,16 @@ let arr2 = [5, 3, 8, 1]
 filterRangeInPlace(arr2, 1, 4)
 
 console.log(arr2)
+
+/* 56. Сортировать в порядке по убыванию
+
+let arr = [5, 2, 1, -10, 8];
+// ... ваш код для сортировки по убыванию
+alert( arr ); // 8, 5, 2, 1, -10 */
+
+let arr3 = [5, 2, 1, -10, 8];
+
+arr3.sort( (a, b) => - a + b);
+
+console.log(arr3)
+
