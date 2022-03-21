@@ -1421,7 +1421,7 @@ let arr2 = [5, 3, 8, 1]
 
 filterRangeInPlace(arr2, 1, 4)
 
-console.log(arr2)
+// console.log(arr2)
 
 /* 56. Сортировать в порядке по убыванию
 
@@ -1433,5 +1433,26 @@ let arr3 = [5, 2, 1, -10, 8];
 
 arr3.sort( (a, b) => - a + b);
 
-console.log(arr3)
+// console.log(arr3)
 
+/* 57. Скопировать и отсортировать массив
+
+У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (без изменений) */
+
+let arr4 = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(arr) {
+  return arr.slice().sort()
+}
+
+let arr5 = copySorted(arr4)
+
+console.log(arr5)
