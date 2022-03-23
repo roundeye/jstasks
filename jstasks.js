@@ -1476,11 +1476,17 @@ let vasya = { name: "Вася", age: 25 };
 let petya = { name: "Петя", age: 30 };
 let masha = { name: "Маша", age: 28 };
 
-let users2 = [ vasya, petya, masha ];
+let students = [ vasya, petya, masha ];
 let names = [];
 
-for (let user of users2) {
-  names.push(user.name)
+
+for (let student of students) {
+  names.push(student.name)
 }
 
 console.log(names)
+
+let students2 = [ vasya, petya, masha ];
+let names2 = students2.map(x => x.name)
+
+console.log(names2)
