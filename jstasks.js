@@ -1562,4 +1562,10 @@ function sortByAge(arr) {
   return arr
 }
 
-console.log(sortByAge(pes))
+function sortByAge2(arr) {
+  arr.sort((a, b) => a.age - b.age);
+  return arr
+}
+
+// console.log(sortByAge(pes))
+// console.log(sortByAge2(pes))
