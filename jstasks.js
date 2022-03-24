@@ -1622,14 +1622,19 @@ let masha7 = { name: "Маша", age: 29 };
 
 let arr7 = [ vasya7, petya7, masha7 ];
 
-function getAverageAge(users) {
-  let sum = 0;
-  for (let i = 0; i < users.length; i++) {
-    sum = sum + users[i].age;
-  }
+// function getAverageAge(users) {
+//   let sum = 0;
+//   for (let i = 0; i < users.length; i++) {
+//     sum = sum + users[i].age;
+//   }
 
-  return sum / users.length
+//   return sum / users.length
+// }
+
+// console.log(getAverageAge(arr7))
+
+function getAverageAge(users) {
+  return users.map(x => x.age / users.length).reduce((sum, current) => sum + current, 0)
 }
 
 console.log(getAverageAge(arr7))
-
