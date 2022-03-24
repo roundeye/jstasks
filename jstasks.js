@@ -1596,5 +1596,40 @@ function shuffle(array) {
 let someArr = [1, 2, 3];
 shuffle(someArr);
 
-console.log(someArr)
-console.log(Math.random())
+// console.log(someArr)
+// console.log(Math.random())
+
+
+/* 62. Получить средний возраст
+
+Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
+
+Формула вычисления среднего арифметического значения: (age1 + age2 + ... + ageN) / N.
+
+Например:
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr = [ vasya, petya, masha ];
+
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28 */
+
+let vasya7 = { name: "Вася", age: 25 };
+let petya7 = { name: "Петя", age: 30 };
+let masha7 = { name: "Маша", age: 29 };
+
+let arr7 = [ vasya7, petya7, masha7 ];
+
+function getAverageAge(users) {
+  let sum = 0;
+  for (let i = 0; i < users.length; i++) {
+    sum = sum + users[i].age;
+  }
+
+  return sum / users.length
+}
+
+console.log(getAverageAge(arr7))
+
