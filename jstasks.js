@@ -1692,3 +1692,15 @@ function unique2(arr) {
 }
 
 console.log(unique2(strings))
+
+function unique3(arr) {
+  let result = [];
+  for (let x of arr) {
+      if (!result.includes(x)) {
+        result.push(x)
+      }
+  }
+  return result
+}
+
+console.log(unique3(strings))
