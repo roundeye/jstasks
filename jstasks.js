@@ -1679,7 +1679,7 @@ let strings = ["кришна", "кришна", "харе", "харе",
   "харе", "харе", "кришна", "кришна", ":-O"
 ];
 
-console.log(unique(strings))
+// console.log(unique(strings))
 
 function unique2(arr) {
   let result = [];
@@ -1691,7 +1691,7 @@ function unique2(arr) {
   return result
 }
 
-console.log(unique2(strings))
+// console.log(unique2(strings))
 
 function unique3(arr) {
   let result = [];
@@ -1703,4 +1703,20 @@ function unique3(arr) {
   return result
 }
 
-console.log(unique3(strings))
+// console.log(unique3(strings))
+
+
+/* 64. Остаточные параметры (...)
+... - Буквально это значит: «собери оставшиеся параметры и положи их в массив» */
+
+function sumAll(...args) {
+  let sum = 0;
+
+  for (let arg of args) {
+    sum += arg;
+  }
+
+  return sum
+}
+
+console.log(sumAll(1, 2, 3))
