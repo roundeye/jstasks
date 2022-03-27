@@ -1719,4 +1719,36 @@ function sumAll(...args) {
   return sum
 }
 
-console.log(sumAll(1, 2, 3))
+// console.log(sumAll(1, 2, 3))
+
+
+/* 65. Остаточные параметры (...) закидываем в массив */
+
+let checkArg = (firstName, secondName, ...titles) => `${firstName} ${secondName} ${titles}` 
+let checkArg2 = (firstName, secondName, ...titles) => titles.length
+
+// console.log(checkArg('DEN', 'PES', 'LUFCBUS', 'ALL-IN2525'))
+// console.log(checkArg2(1, 2, 3, 4, 5, 6, 7))
+
+/* 66. Работа с аргументами функции */
+
+function checkArg3() {
+  return [arguments[0], arguments[1], arguments.length]
+}
+
+// console.log(checkArg3('DEN', 'PES', 'LUFCBUS', 'ALL-IN2525'))
+
+
+/* 67. Оператор расширения */
+
+let maxNumber = (arr1, arr2) => {
+  return Math.max(...arr1, ...arr2)
+}
+
+// console.log(maxNumber([1, 3, -10, 7], [11, 12]))
+
+let test = (str) => {
+  return [...str]
+}
+
+console.log(test('Привет'))
