@@ -1751,7 +1751,7 @@ let test = (str) => {
   return [...str]
 }
 
-console.log(test('Привет'))
+// console.log(test('Привет'))
 
 /* 68. Независимы ли счётчики?
 
@@ -1775,3 +1775,16 @@ alert( counter() ); // 1
 
 alert( counter2() ); // ?
 alert( counter2() ); // ? */
+
+
+/* 69. приоритет переменных в ф-ии и снаружи */
+let rab = "John";
+
+function sayHi() {
+  rab = 'pes'
+  return "Hi, " + rab
+}
+
+rab = "Pete";
+
+// console.log(sayHi())
