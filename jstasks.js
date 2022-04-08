@@ -1776,6 +1776,17 @@ alert( counter() ); // 1
 alert( counter2() ); // ?
 alert( counter2() ); // ? */
 
+function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+let counter2 = makeCounter();
+
 
 /* 69. приоритет переменных в ф-ии и снаружи */
 let rab = "John";
@@ -1788,3 +1799,67 @@ function sayHi() {
 rab = "Pete";
 
 // console.log(sayHi())
+
+/* 70. Функция showSalary(users, age)  
+Создайте функцию showSalary, которая принимает массив пользователей users и максимальный возраст age и возвращает строку с именами и зарплатами пользователей, у которых возраст меньше или равен параметру age.
+
+// users - массив пользователей
+// age - максимальный возраст пользователей (любое число)
+let result = showSalary(users, age);
+users – это массив пользователей, где каждый пользователь представлен объектом, содержащим следующие обязательные поля:
+
+// Объект одного пользователя
+let user1 = {
+  "balance": "$1,825.65",
+  "picture": "https://placehold.it/32x32",
+  "age": 21,
+  "name": "Golden Branch",
+  "gender": "male",
+  "greeting": "Hello, Golden Branch! You have 7 unread messages.",
+  "favouriteFruit": "banana"
+};
+
+// Массив пользователей
+let users = [user1, <...и другие пользователи>]
+Функция showSalary должна возвращать строку из имён и баланса подходящих пользователей, в формате:
+
+'Golden Branch, $1,825.65
+Duncan Randall, $1,490.15'
+(!!!) Обратите внимание, что каждый пользователь находится на новой строке. Это сделано специально и должно быть учтено в решении.
+
+(!!!) При этом нужно учесть, что после последней строки не нужно добавлять перевод строки. При проверке решения это условие также учитывается.
+
+Почитать про то, как реализовать перевод строки можно вот тут Спецсимволы в строках
+*/
+
+let user11 = {
+  "balance": "$1,825.65",
+  "picture": "https://placehold.it/32x32",
+  "age": 21,
+  "name": "Golden Branch",
+  "gender": "male",
+  "greeting": "Hello, Golden Branch! You have 7 unread messages.",
+  "favouriteFruit": "banana"
+}
+
+let user22 = {
+  "balance": "$1,825.65",
+  "picture": "https://placehold.it/32x32",
+  "age": 21,
+  "name": "Golden Branch",
+  "gender": "male",
+  "greeting": "Hello, Golden Branch! You have 7 unread messages.",
+  "favouriteFruit": "banana"
+}
+
+let people = [user11, user22] 
+
+function showSalary(users, age) {
+  return users
+  .filter(user => user.age <= age)
+  .map(user => `${user.name}, ${user.balance}`)
+  .join('\n');
+}
+
+console.log(showSalary(people, 21))
+
