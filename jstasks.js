@@ -1904,4 +1904,19 @@ function getMinMax(str) {
 
 console.log(getMinMax('1 и -5.8 или 10 хотя 34 + -5.3 и 73'))
 
+// 71 - 2. Найти min/max в строке и лишние запятые
 
+function getMinMax2(str) {
+  let arr = str
+  .replace(/,/g,'')
+  .split(' ')
+  .map(x => +x)
+  .filter(x => !isNaN(x));
+
+  return {
+    min: Math.min(...arr), 
+    max: Math.max(...arr)
+  }
+}
+
+console.log(getMinMax2('1, и -5.8 или 10, хотя 34 + -5.3 и 73'))
